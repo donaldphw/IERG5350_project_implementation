@@ -185,7 +185,6 @@ class SailingEnvDQN():
 #         print(newstate)
         newletter = self.desc[self.current_state[0]][self.current_state[1]]
         
-        self.current_step = self.current_step + 1
         s_updated_destinations = self.update_reached_destinations(newstate)
         
         self.s = newstate
@@ -202,7 +201,7 @@ class SailingEnvDQN():
         if is_get_reward == True and newstate in rewards_dict[self.map_name]:
 #                 if is_updated_destinations == True:
                 reward = rewards_dict[self.map_name][newstate]
-                
+
         if done != True:
             self.current_step += 1
         else:
