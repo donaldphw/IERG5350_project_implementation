@@ -24,48 +24,47 @@ MAPS = {
 #         "HFFG"
 #     ],
     "8x8": [
-        "SWWOOWWD",
+        "SWWWWWWD",
+        "WWWOOWWW",
         "WWWOOWWW",
         "WWWWWWWW",
-        "WWWWWWWW",
-        "OOWWWWWW",
-        "WWWWWWWW",
-        "WWWWWWOO",
+        "WOOWWWWW",
+        "WWWWWOOW",
+        "WWWWWOOW",
         "DWWWWWWD"
     ],
     "16x16": [
-        "SWWWWWWWWWWOOWWD",
+        "SWWWWWWWWWWWWWWD",
+        "WWWWWWWWWWWWWWWW",
         "WWWWWWWWWWWOOWWW",
-        "WWWWWWWWWWWWWWWW",
+        "WWWWOOOWWWWOOWWW",
         "WWWWOOOWWWWWWWWW",
-        "WWWWOOOWWWWWWWWW",
         "WWWWWWWWWWWWWWWW",
-        "OOOWWWWWWWWWWOOO",
-        "OOOWWWWWWWWWWOOO",
+        "WOOWWWWWWWWWWOOO",
+        "WOOWWWWWWWWWWOOO",
         "WWWWWWWWWWWWWWWW",
         "WWWWWWOOOWWWWWWW",
         "WWWWWWOOOWWWWWWW",
         "WWWWWWWWWWWWWWWW",
-        "OOOWWWWWWWWWWWWW",
-        "OOOWWWWWWWWWWWWW",
-        "WWWWWWWWWWOOOOOO",
+        "WOOWWWWWWWWWWWWW",
+        "WOOWWWWWWWOOOWWW",
+        "WWWWWWWWWWOOOWWW",
         "DWWWWWWWWWWWWWWD"
     ],
 }
 
-
 rewards_dict = {
     "8x8":
     {
-        7 : 2.0,
-        56 : 4.0,
-        63 : 10.0
+        7 : 200,
+        56 : 400,
+        63 : 1000
     },
     "16x16":
     {
-        15: 400.0,
-        240: 800.0,
-        255 : 2000.0
+        15: 4000.0,
+        240: 8000.0,
+        255 : 20000.0
     }
     
 }
@@ -193,7 +192,7 @@ class SailingEnv():
             #     done =  self.num_reached_destinations == self.total_destinations
             
             reward = - 1
-            is_get_reward = float(newletter == b'D')
+            is_get_reward = newletter == b'D'
             if is_get_reward == True and newstate in rewards_dict[self.map_name]:
 #                 if is_updated_destinations == True:
                 reward+= rewards_dict[self.map_name][newstate]
