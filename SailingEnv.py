@@ -192,11 +192,11 @@ class SailingEnv():
             # if is_updated_destinations == True:
             #     done =  self.num_reached_destinations == self.total_destinations
             
-            reward = 0.0
+            reward = - 1
             is_get_reward = float(newletter == b'D')
             if is_get_reward == True and newstate in rewards_dict[self.map_name]:
 #                 if is_updated_destinations == True:
-                reward = rewards_dict[self.map_name][newstate]
+                reward+= rewards_dict[self.map_name][newstate]
 #             reward = float(newletter == b'D')
 #             reward = get_reward()
 #             reward = float(self.num_reached_destinations == self.total_destinations)
@@ -253,8 +253,8 @@ class SailingEnv():
             d =  True
         if d != True:
             self.current_step = self.current_step + 1
-        else:
-            r -= self.current_step
+        # else:
+        #     r -= self.current_step
 
             
         return (int(s), r, d, {"prob": p})
