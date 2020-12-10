@@ -194,15 +194,15 @@ class SailingEnvDQN():
         if self.current_step == self.total_steps:
             done =  True
             
-        # reward = -1
-        reward = 0.05
+        reward = -1
+        # reward = 0.05
 
         is_get_reward = float(newletter == b'D')
 
         # if is_get_reward == True and newstate in rewards_dict[self.map_name]:
         if is_get_reward == True:
 #                 if is_updated_destinations == True:
-                reward += rewards_dict[self.map_name][newstate]
+                reward =  rewards_dict[self.map_name][newstate]
 
         if done != True:
             self.current_step += 1
