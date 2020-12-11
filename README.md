@@ -31,14 +31,12 @@ The train agents using three types of RL algorithms:
 2. Value Iteration
 3. DQN
 
-The experiments of policy iteration and value iteration are conducted in [5350_project_PI.ipynb][1], the experiments of DQN are conducted in [5350_project_PI.ipynb][2].
-
-[1]: 5350_project_PI.ipynb
-[2]: 5350_project_PI.ipynb
-
+The experiments of policy iteration and value iteration are conducted in [5350_project_PI.ipynb][1], the experiments of DQN are conducted in [5350_project_DQN.ipynb][2].
 
 ## Acknowledgement
 Some parts the codes of the RL algorithms are referenced from the assignments of this course.
 
+[1]: 5350_project_PI.ipynb
+[2]: 5350_project_DQN.ipynb
 
 
