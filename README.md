@@ -8,11 +8,11 @@ The environment is a simulation of a cargo ship sailing over the sea. We have im
 2. SailingEnvDQN: our own developed environment which is capable for DQN training
 
 Our environment provides maps in two sizes: 8x8 and 16x16. The 8x8 map serves as the baseline and then we extend the experiment to a 16x16 map measure the scalability of our solutions. Here are the illustrations of our environments:
-<center><img src="./8x8.png" width="50%"></center>
+<center><img src="./map/8x8.png" width="50%"></center>
 Figure 1: Training environment with size 8x8
 <br>
 <br>
-<center><img src="./16x16.png" width="50%"></center>
+<center><img src="./map/16x16.png" width="50%"></center>
 Figure 2: Training environment with size 16x16
 <br>
 <br>
@@ -23,7 +23,7 @@ There are four types of grids in the map:
 1. **S**: the starting point of the cargo ship, with reward -1.0. 
 2. **W**: the water (i.e. the sea), with reward -1.0.
 3. **O**: the obstacle in the sea, with reward -1.0. Once the cargo ship is move to **O**, that the movement will be terminated.
-4. **D**: the destnation of the cargo ship, the rewards of **D** is varies with the diffculties of the cargo ship to reach. There are total $K=3$ destinations in each map.
+4. **D**: the destnation of the cargo ship, the rewards of **D** is varies with the diffculties of the cargo ship to reach. There are total 3 destinations in each map.
 
 ## Experiment
 The train agents using three types of RL algorithms: 
